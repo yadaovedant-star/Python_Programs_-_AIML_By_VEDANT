@@ -1,0 +1,8 @@
+color=('red', 'green', 'blue', 'yellow', 'purple', 'orange')
+print("The 1st element from the tuple is =",color[0])
+print("The 3rd element From the tuple is =",color[2])
+print("The last element From the tuple is =",color[-1])
+print("The second last element in the Tuple is =",color[-2])
+#print("The elements in Tuple are :")
+index=int(input("Enter an index number ="))
+print("Element at index", index, "is =", color[index])
