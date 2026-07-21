@@ -45,6 +45,8 @@ Assignment_13
 - Assignment 18 Data Set
 - Assignment 19 Data Set
 - Assignment 20 Data Set
+- Assignment 21 Data Set
+- Assignment 22 Data Set
 
 Each assignment contains Python programs covering different programming concepts and problem-solving exercises.
 
@@ -54,6 +56,16 @@ Each assignment contains Python programs covering different programming concepts
 - Visual Studio Code
 - Git
 - GitHub
+- Streamlit
+- Jupyter Notebook
+- Google Colab
+- kaggle.com
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
 
 ## ▶️ How to Run
 
