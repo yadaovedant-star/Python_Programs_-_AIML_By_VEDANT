@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+ 
+from pathlib import Path
 
-
+BASE_DIR = Path(__file__).resolve().parent
 # Page Configuration
 
 st.set_page_config(
@@ -121,8 +123,10 @@ elif page == "❤️ Heart Disease Prediction":
  
     # Loading Required Files
 
-    class_columns = joblib.load("class_columns.pkl")
-    class_scaler = joblib.load("class_scaler.pkl")
+  
+
+    class_columns = joblib.load(BASE_DIR / "class_columns.pkl")
+    class_scaler = joblib.load(BASE_DIR / "class_scaler.pkl")
 
 
     # taking input from User 
@@ -172,7 +176,7 @@ elif page == "❤️ Heart Disease Prediction":
 
     if st.button("Predict Heart Dataset"):
 
-        model = joblib.load(classification_models[algorithm])
+        model = joblib.load(BASE_DIR / classification_models[algorithm])
 
 
 
@@ -248,9 +252,11 @@ elif page == "🚗 Car Price Prediction":
             "K-Nearest Neighbors Regressor"
         ]
     ) 
-        # Load Required Files
-    regi_columns = joblib.load("regi_columns.pkl")
-    regi_scaler = joblib.load("regi_scaler.pkl")
+
+   
+
+    regi_columns = joblib.load(BASE_DIR / "regi_columns.pkl")
+    regi_scaler = joblib.load(BASE_DIR / "regi_scaler.pkl")
 
 # Taking Input From User
     year = st.number_input("Year", min_value=1990, max_value=2026,value=2018)
@@ -284,7 +290,7 @@ elif page == "🚗 Car Price Prediction":
 
 
     # Load Selected Model
-        model = joblib.load(regression_models[algorithm])
+        model = joblib.load(BASE_DIR / regression_models[algorithm])
 
     # Create Empty Dictionar
         input_data = dict.fromkeys(regi_columns, 0)
