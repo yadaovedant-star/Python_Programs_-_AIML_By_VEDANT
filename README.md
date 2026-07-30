@@ -47,6 +47,9 @@ Assignment_13
 - Assignment 20 Data Set
 - Assignment 21 Data Set
 - Assignment 22 Data Set
+- Assignment 23 Data Set
+- Assignment 24 Data Set
+- Assignment 25 Data Set
 
 Each assignment contains Python programs covering different programming concepts and problem-solving exercises.
 
