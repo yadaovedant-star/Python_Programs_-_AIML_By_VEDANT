@@ -4,6 +4,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from pathlib import Path
 
 
 # Page Configuration
@@ -19,38 +20,24 @@ st.set_page_config(
 # Load Models
 
 
-linear_model = joblib.load("linear_regression_model.pkl")
-
-logistic_model = joblib.load("logistic_regression_model.pkl")
-
-knn_model = joblib.load("knn_classifier_model.pkl")
-
-naive_bayes_model = joblib.load("naive_bayes_classifier_model.pkl")
 
 
+BASE_DIR = Path(__file__).parent
 
-# Load Preprocessors
+linear_model = joblib.load(BASE_DIR / "linear_regression_model.pkl")
+logistic_model = joblib.load(BASE_DIR / "logistic_regression_model.pkl")
+knn_model = joblib.load(BASE_DIR / "knn_classifier_model.pkl")
+naive_bayes_model = joblib.load(BASE_DIR / "naive_bayes_classifier_model.pkl")
 
+linear_columns = joblib.load(BASE_DIR / "linear_columns.pkl")
+logistic_columns = joblib.load(BASE_DIR / "logistic_columns.pkl")
+knn_columns = joblib.load(BASE_DIR / "knn_columns.pkl")
+naive_bayes_columns = joblib.load(BASE_DIR / "naive_bayes_columns.pkl")
 
-linear_columns = joblib.load("linear_columns.pkl")
+knn_scaler = joblib.load(BASE_DIR / "knn_scaler.pkl")
 
-logistic_columns = joblib.load("logistic_columns.pkl")
-
-knn_columns = joblib.load("knn_columns.pkl")
-
-naive_bayes_columns = joblib.load("naive_bayes_columns.pkl")
-
-knn_scaler = joblib.load("knn_scaler.pkl")
-
-
-
-
-# Load Datasets
-
-
-car_df = pd.read_csv("CarDetails.csv")
-
-heart_df = pd.read_csv("heart.csv")
+car_df = pd.read_csv(BASE_DIR / "CarDetails.csv")
+heart_df = pd.read_csv(BASE_DIR / "heart.csv")
 
 
 
@@ -58,7 +45,8 @@ heart_df = pd.read_csv("heart.csv")
 
 
 st.title("🤖 AIML Model Predictor")
-st.write("Predict Car Price or Heart Disease using Machine Learning Models")
+st.caption("Linear Regression | Logistic Regression | KNN | Naive Bayes")
+st.divider()
 
 
 
@@ -240,11 +228,7 @@ if prediction_type == "Heart Disease Prediction" and predict_heart:
     })
 
     input_data = pd.get_dummies(input_data)
-    print("Current Columns:")
-    print(input_data.columns.tolist())
-
-    print("\nSaved Columns:")
-    print(logistic_columns)
+   
 
     if algorithm == "Logistic Regression":
 
@@ -254,11 +238,7 @@ if prediction_type == "Heart Disease Prediction" and predict_heart:
         )
 
         prediction = logistic_model.predict(input_data)[0]
-        print("Input Data Columns:")
-        print(input_data.columns.tolist())
-
-        print("\nModel Expected Features:")
-        print(logistic_model.feature_names_in_)
+        
 
     elif algorithm == "K-Nearest Neighbors":
 
@@ -286,3 +266,6 @@ if prediction_type == "Heart Disease Prediction" and predict_heart:
         st.error("Heart Disease Detected")
     else:
         st.success("No Heart Disease Detected")
+
+        st.divider()
+st.caption("Developed by Vedant Yadao | AIML Assignment")
