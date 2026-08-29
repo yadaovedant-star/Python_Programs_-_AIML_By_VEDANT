@@ -1,0 +1,37 @@
+# Python virtual environment
+.venv/
+
+# Environment variables / API keys
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Hugging Face cache / downloaded models
+.cache/
+huggingface/
+hf_cache/
+
+# Local model/cache locations
+models/
+model_cache/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+settings.json
