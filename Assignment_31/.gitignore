@@ -35,3 +35,5 @@ dist/
 build/
 
 settings.json
+
+.vscode
