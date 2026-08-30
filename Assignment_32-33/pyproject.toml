@@ -1,0 +1,29 @@
+[project]
+name = "assignment-32-33"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vedant", email = "your-yadaovedant@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "chromadb>=1.5.9",
+    "langchain>=1.3.18",
+    "langchain-chroma>=1.1.0",
+    "langchain-community>=0.4.2",
+    "langchain-groq>=1.1.3",
+    "langchain-huggingface>=1.2.2",
+    "langchain-text-splitters>=1.1.2",
+    "pypdf>=6.16.2",
+    "python-dotenv>=1.2.3",
+    "sentence-transformers>=6.0.0",
+]
+
+[project.scripts]
+assignment-32-33 = "assignment_32_33:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
