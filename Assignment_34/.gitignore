@@ -1,0 +1,48 @@
+# Virtual environment
+agents/
+.venv/
+venv/
+
+# Environment variables / API keys
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LangFlow local data / database
+langflow.db
+*.db
+*.sqlite
+*.sqlite3
+
+# LangFlow generated/local files
+langflow/
+.Langflow/
+.langflow/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
